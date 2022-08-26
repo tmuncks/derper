@@ -1,0 +1,11 @@
+services:
+  derper:
+    image: tmuncks/derper:latest
+    restart: always
+    environment:
+      DERP_DOMAIN: derp.example.com
+    volumes:
+      - ./derper-certs:/root/.cache/tailscale/derper-certs
+    ports:
+      - 443:443/tcp
+      - 3478:3478/udp
